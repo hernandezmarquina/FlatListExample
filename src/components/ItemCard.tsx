@@ -11,11 +11,16 @@ export interface Item {
 interface ItemCardProps {
   item: Item;
   maxWidth?: number;
+  maxHeight?: number;
 }
 
 const ItemCard = (props: ItemCardProps) => {
   return (
-    <View style={[styles.content, {maxWidth: props.maxWidth}]}>
+    <View
+      style={[
+        styles.content,
+        {maxWidth: props.maxWidth, maxHeight: props.maxHeight},
+      ]}>
       <Image style={styles.image} source={{uri: props.item.image}} />
       <Text style={styles.title}>{props.item.title}</Text>
       <Text style={styles.description}>{props.item.description}</Text>
